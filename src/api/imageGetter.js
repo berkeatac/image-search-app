@@ -1,4 +1,4 @@
-import { updateCache, getFromCache } from "../api/cache";
+import { updateCache, getFromCache } from "../api/cacheUtils";
 import unsplash from "../api/unsplash";
 
 // Returns data from local storage if exists
