@@ -11,7 +11,8 @@
     "react-dom": "^16.13.0",
     "react-masonry-component": "^6.2.1",
     "react-scripts": "3.4.0",
-    "react-select": "^3.0.8"
+    "react-select": "^3.0.8",
+    "react-spinners": "^0.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
