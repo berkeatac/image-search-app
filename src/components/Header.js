@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Select from "react-select";
+import { customStyles, options, DropdownIndicator } from "./dropdownOptions";
 import logo from "../assets/logo.svg";
 
 import "./Header.css";
@@ -30,6 +32,16 @@ const Header = ({ setTerm, setCollection }) => {
               setInputParams({ ...inputParams, query: e.target.value })
             }
             className="query-input"
+          />
+          <Select
+            onChange={item =>
+              setInputParams({ ...inputParams, colId: item.value })
+            }
+            className="dropdown"
+            options={options}
+            placeholder="Collections"
+            styles={customStyles}
+            components={{ DropdownIndicator }}
           />
           <button type="submit" className="submit-button">
             <p className="submit-text">SEARCH</p>
