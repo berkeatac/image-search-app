@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 
 import Header from "./Header";
 import ImageList from "./ImageList";
@@ -56,6 +57,18 @@ const App = () => {
     <div className="App">
       <div className="navbar">
         <Header setTerm={setTerm} setCollection={setCollection} />
+      </div>
+      <div className="content">
+        {loading ? (
+          <div className="loader-container">
+            <ClipLoader />
+          </div>
+        ) : error !== "" ? (
+          <ErrorBox errorMessage={error} />
+        ) : (
+          <ImageList images={images} />
+        <PageButtons page={page} setPage={setPage} totalPages={totalPages} />
+        )}
       </div>
     </div>
   );
