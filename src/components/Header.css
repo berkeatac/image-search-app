@@ -37,13 +37,10 @@
 
 .form-container {
   display: flex;
-  width: auto;
-}
-
-.submit-form {
-  display: flex;
   height: 120px;
   align-items: center;
+  margin-right: 100px;
+  justify-content: space-evenly;
 }
 
 .query-input {

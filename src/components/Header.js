@@ -23,31 +23,29 @@ const Header = ({ setTerm, setCollection }) => {
           <img src={logo} alt="logo" />
         </div>
       </div>
-      <div className="form-container">
-        <form onSubmit={e => getImages(e)} className="submit-form">
-          <input
-            type="text"
-            value={inputParams.query}
-            onChange={e =>
-              setInputParams({ ...inputParams, query: e.target.value })
-            }
-            className="query-input"
-          />
-          <Select
-            onChange={item =>
-              setInputParams({ ...inputParams, colId: item.value })
-            }
-            className="dropdown"
-            options={options}
-            placeholder="Collections"
-            styles={customStyles}
-            components={{ DropdownIndicator }}
-          />
-          <button type="submit" className="submit-button">
-            <p className="submit-text">SEARCH</p>
-          </button>
-        </form>
-      </div>
+      <form onSubmit={e => getImages(e)} className="form-container">
+        <input
+          type="text"
+          value={inputParams.query}
+          onChange={e =>
+            setInputParams({ ...inputParams, query: e.target.value })
+          }
+          className="query-input"
+        />
+        <Select
+          onChange={item =>
+            setInputParams({ ...inputParams, colId: item.value })
+          }
+          className="dropdown"
+          options={options}
+          placeholder="Collections"
+          styles={customStyles}
+          components={{ DropdownIndicator }}
+        />
+        <button type="submit" className="submit-button">
+          <p className="submit-text">SEARCH</p>
+        </button>
+      </form>
     </div>
   );
 };

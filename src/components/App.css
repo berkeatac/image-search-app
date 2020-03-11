@@ -7,3 +7,13 @@ body {
   top: 0;
   z-index: 20;
 }
+
+.content {
+  max-width: 960px;
+  margin: 30px auto;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+}
