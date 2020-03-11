@@ -66,8 +66,14 @@ const App = () => {
         ) : error !== "" ? (
           <ErrorBox errorMessage={error} />
         ) : (
-          <ImageList images={images} />
-        <PageButtons page={page} setPage={setPage} totalPages={totalPages} />
+          <>
+            <ImageList images={images} />
+            <PageButtons
+              page={page}
+              setPage={setPage}
+              totalPages={totalPages}
+            />
+          </>
         )}
       </div>
     </div>
