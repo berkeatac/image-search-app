@@ -7,6 +7,7 @@ Uses Unsplash API to retrieve images with given parameters from user. Displays r
 
 ### Features
 
+Follows the design outline with some changes to achieve responsiveness <br>
 Used function components & Hooks to manage component level states and events.<br>
 Implemented caching with imageGetter module. Uses local storage & decides on local/remote data retrieval.<br>
 
@@ -17,6 +18,6 @@ react-masonry-component<br>
 react-spinners<br>
 react-select<br>
 
-### To Do
+### Future Improvements
 
-Add responsive / mobile layouts
+Although the header and masonry is responsive, header sub-components may be further improved for a mobile friendly layout
