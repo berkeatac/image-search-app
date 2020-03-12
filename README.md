@@ -20,4 +20,4 @@ react-select<br>
 
 ### Future Improvements
 
-Although the header and masonry is responsive, header sub-components may be further improved for a mobile friendly layout
+Although the header and masonry are responsive, header sub-components may be further improved for a mobile friendly layout
