@@ -26,6 +26,7 @@ const Header = ({ setTerm, setCollection }) => {
       <form onSubmit={e => getImages(e)} className="form-container">
         <input
           type="text"
+          placeholder="Query"
           value={inputParams.query}
           onChange={e =>
             setInputParams({ ...inputParams, query: e.target.value })
