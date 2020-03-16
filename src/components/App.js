@@ -63,9 +63,9 @@ const App = () => {
           <div className="loader-container">
             <ClipLoader />
           </div>
-        ) : error !== "" ? (
-          <ErrorBox errorMessage={error} />
-        ) : (
+        ) : null}
+        {error !== "" && !loading ? <ErrorBox errorMessage={error} /> : null}
+        {!loading && error === "" ? (
           <>
             <ImageList images={images} />
             <PageButtons
@@ -74,7 +74,7 @@ const App = () => {
               totalPages={totalPages}
             />
           </>
-        )}
+        ) : null}
       </div>
     </div>
   );
