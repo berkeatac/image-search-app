@@ -5,14 +5,18 @@ import logo from "../assets/logo.svg";
 
 import "./Header.css";
 
-const Header = ({ setTerm, setCollection }) => {
+const Header = ({ state, dispatch }) => {
   const [inputParams, setInputParams] = useState({ query: "", colId: 0 });
 
   const getImages = event => {
     event.preventDefault();
     if (inputParams.query !== "") {
-      setTerm(inputParams.query);
-      setCollection(inputParams.colId);
+      // setTerm(inputParams.query);
+      // setCollection(inputParams.colId);
+      dispatch({
+        type: "SET_PARAMS",
+        payload: { term: inputParams.query, collection: inputParams.colId }
+      });
     }
   };
 
