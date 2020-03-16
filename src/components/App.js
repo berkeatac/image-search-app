@@ -49,7 +49,7 @@ const App = () => {
     setError("");
     setLoading(true);
 
-    const [{ results, total_pages }, e] = await imageGetter(
+    const [data, e] = await imageGetter(
       state.term,
       state.collection,
       state.page,
@@ -58,8 +58,7 @@ const App = () => {
     if (e) {
       setError(e);
     } else {
-      // setImages(results);
-      // setTotalPages(total_pages);
+      const { results, total_pages } = data;
       dispatch({
         type: "SET_IMAGES",
         payload: { images: results, total_pages }

@@ -21,7 +21,7 @@ const imageGetter = async (term, collection, page) => {
       return [res.data, null];
     } catch (e) {
       if (e.response)
-        return [null, "" + e.response.status + " " + e.response.data.errors[0]];
+        return [null, `${e.response.status} ${e.response.data.errors[0]}`];
     }
   }
   return [null, "Something went wrong"];
