@@ -12,15 +12,16 @@ const ImageList = ({ images }) => {
   const items = images.map(img => {
     const height = img.height * (300 / img.width);
     return (
-      <img
-        key={img.id}
-        src={img.urls.small}
-        alt={img.alt_description}
-        className="list-image"
-        // Workaround to disable inital animation by setting height before image load
-        style={{ height: `${height}px` }}
-        onClick={() => window.open(img.links.html, "_blank")}
-      ></img>
+      <a href={img.links.html} target="_blank">
+        <img
+          key={img.id}
+          src={img.urls.small}
+          alt={img.alt_description}
+          className="list-image"
+          // Workaround to disable inital animation by setting height before image load
+          style={{ height: `${height}px` }}
+        ></img>
+      </a>
     );
   });
 
