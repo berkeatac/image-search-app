@@ -50,14 +50,14 @@ const App = () => {
     setError("");
     setLoading(true);
 
-    const [data, e] = await imageGetter(
+    const [data, error] = await imageGetter(
       state.term,
       state.collection,
       state.page,
       setError
     );
-    if (e) {
-      setError(e);
+    if (error) {
+      setError(error);
     } else {
       const { results, total_pages } = data;
       dispatch({
