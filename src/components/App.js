@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 
 import Header from "./Header";
@@ -8,12 +8,41 @@ import ErrorBox from "./ErrorBox";
 import imageGetter from "../api/imageGetter";
 import "./App.css";
 
+const initialState = {
+  images: [],
+  term: "istanbul",
+  collection: 0,
+  page: 1,
+  total_pages: 1
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "SET_PARAMS":
+      return {
+        ...state,
+        term: action.payload.term,
+        collection: action.payload.collection,
+        page: 1
+      };
+    case "SET_IMAGES":
+      return {
+        ...state,
+        images: action.payload.images,
+        total_pages: action.payload.total_pages
+      };
+    case "SET_PAGE":
+      return {
+        ...state,
+        page: action.payload.page
+      };
+    default:
+      return state;
+  }
+};
+
 const App = () => {
-  const [images, setImages] = useState([]);
-  const [term, setTerm] = useState("istanbul");
-  const [collection, setCollection] = useState(0);
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [state, dispatch] = useReducer(reducer, initialState);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -21,60 +50,48 @@ const App = () => {
     setError("");
     setLoading(true);
 
-    const [{ results, total_pages }, e] = await imageGetter(
-      term,
-      collection,
-      page,
+    const [data, error] = await imageGetter(
+      state.term,
+      state.collection,
+      state.page,
       setError
     );
-    if (e) {
-      setError(e);
+    if (error) {
+      setError(error);
     } else {
-      setImages(results);
-      setTotalPages(total_pages);
+      const { results, total_pages } = data;
+      dispatch({
+        type: "SET_IMAGES",
+        payload: { images: results, total_pages }
+      });
       if (results.length === 0) setError("No result has been found");
     }
 
     setLoading(false);
   };
 
-  // triggers on form submit
-  useEffect(() => {
-    if (page === 1) {
-      // when already in first page, setting page does not trigger second useEffect
-      onSearchSubmit();
-    } else {
-      setPage(1); // this triggers the other useEffect's onSearchSubmit
-    }
-  }, [term, collection]);
-
-  //trigger on page change
   useEffect(() => {
     onSearchSubmit();
-  }, [page]);
+  }, [state.term, state.collection, state.page]);
 
   return (
     <div className="App">
       <div className="navbar">
-        <Header setTerm={setTerm} setCollection={setCollection} />
+        <Header state={state} dispatch={dispatch} />
       </div>
       <div className="content">
         {loading ? (
           <div className="loader-container">
             <ClipLoader />
           </div>
-        ) : error !== "" ? (
-          <ErrorBox errorMessage={error} />
-        ) : (
+        ) : null}
+        {error !== "" && !loading ? <ErrorBox errorMessage={error} /> : null}
+        {!loading && error === "" ? (
           <>
-            <ImageList images={images} />
-            <PageButtons
-              page={page}
-              setPage={setPage}
-              totalPages={totalPages}
-            />
+            <ImageList images={state.images} />
+            <PageButtons state={state} dispatch={dispatch} />
           </>
-        )}
+        ) : null}
       </div>
     </div>
   );

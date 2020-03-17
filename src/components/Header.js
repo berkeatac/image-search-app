@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import PropTypes from "prop-types";
 import Select from "react-select";
 import { customStyles, options, DropdownIndicator } from "./dropdownOptions";
 import logo from "../assets/logo.svg";
 
 import "./Header.css";
 
-const Header = ({ setTerm, setCollection }) => {
-  const [inputParams, setInputParams] = useState({ query: "", colId: 0 });
+const Header = ({ state, dispatch }) => {
+  const inputEl = useRef("");
+  const dropEl = useRef(0);
 
   const getImages = event => {
+    console.log(inputEl, dropEl);
+
     event.preventDefault();
-    if (inputParams.query !== "") {
-      setTerm(inputParams.query);
-      setCollection(inputParams.colId);
+    if (inputEl.current.value !== "" && dropEl.current.state.value) {
+      dispatch({
+        type: "SET_PARAMS",
+        payload: {
+          term: inputEl.current.value,
+          collection: dropEl.current.state.value.value
+        }
+      });
     }
   };
 
@@ -27,16 +36,11 @@ const Header = ({ setTerm, setCollection }) => {
         <input
           type="text"
           placeholder="Query"
-          value={inputParams.query}
-          onChange={e =>
-            setInputParams({ ...inputParams, query: e.target.value })
-          }
+          ref={inputEl}
           className="query-input"
         />
         <Select
-          onChange={item =>
-            setInputParams({ ...inputParams, colId: item.value })
-          }
+          ref={dropEl}
           className="dropdown"
           options={options}
           placeholder="Collections"
@@ -49,6 +53,11 @@ const Header = ({ setTerm, setCollection }) => {
       </form>
     </div>
   );
+};
+
+Header.propTypes = {
+  state: PropTypes.object,
+  dispatch: PropTypes.func
 };
 
 export default Header;
