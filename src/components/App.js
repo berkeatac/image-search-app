@@ -22,7 +22,8 @@ const reducer = (state, action) => {
       return {
         ...state,
         term: action.payload.term,
-        collection: action.payload.collection
+        collection: action.payload.collection,
+        page: 1
       };
     case "SET_IMAGES":
       return {
@@ -69,20 +70,9 @@ const App = () => {
     setLoading(false);
   };
 
-  // triggers on form submit
-  useEffect(() => {
-    if (state.page === 1) {
-      // when already in first page, setting page does not trigger second useEffect
-      onSearchSubmit();
-    } else {
-      // setPage(1); // this triggers the other useEffect's onSearchSubmit
-    }
-  }, [state.term, state.collection]);
-
-  //trigger on page change
   useEffect(() => {
     onSearchSubmit();
-  }, [state.page]);
+  }, [state.term, state.collection, state.page]);
 
   return (
     <div className="App">
