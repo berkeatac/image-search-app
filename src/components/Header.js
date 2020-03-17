@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Select from "react-select";
 import { customStyles, options, DropdownIndicator } from "./dropdownOptions";
@@ -6,7 +6,7 @@ import logo from "../assets/logo.svg";
 
 import "./Header.css";
 
-const Header = ({ state, dispatch }) => {
+const Header = ({ dispatch }) => {
   const inputEl = useRef("");
   const dropEl = useRef(0);
 
@@ -24,6 +24,10 @@ const Header = ({ state, dispatch }) => {
       });
     }
   };
+
+  useEffect(() => {
+    inputEl.current.value = "istanbul";
+  }, []);
 
   return (
     <div className="header">
@@ -44,6 +48,7 @@ const Header = ({ state, dispatch }) => {
           className="dropdown"
           options={options}
           placeholder="Collections"
+          defaultValue={{ label: "Default", value: 0 }}
           styles={customStyles}
           components={{ DropdownIndicator }}
         />

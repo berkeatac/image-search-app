@@ -13,15 +13,16 @@ const ImageList = ({ images }) => {
   const items = images.map(img => {
     const height = img.height * (300 / img.width);
     return (
-      // <a href={img.links.html} target="_blank">
-      <img
-        key={img.id}
-        src={img.urls.small}
-        alt={img.alt_description}
-        className="list-image"
-        style={{ gridRowEnd: `span ${Math.ceil(height / 10) + 2}` }}
-      ></img>
-      // </a>
+      <div style={{ gridRowEnd: `span ${Math.ceil(height / 10) + 2}` }}>
+        <a href={img.links.html} target="_blank">
+          <img
+            key={img.id}
+            src={img.urls.small}
+            alt={img.alt_description}
+            className="list-image"
+          ></img>
+        </a>
+      </div>
     );
   });
 
