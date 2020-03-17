@@ -1,15 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Masonry from "react-masonry-component";
 
 import "./ImageList.css";
 
 const ImageList = ({ images }) => {
-  const masonryOptions = {
-    isFitWidth: true,
-    transitionDuration: "0.10s" // no transition duration may cause bugs
-  };
-
   const items = images.map(img => {
     const height = img.height * (300 / img.width);
     return (
