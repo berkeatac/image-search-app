@@ -19,9 +19,12 @@ const imageGetter = async (term, collection, page) => {
       });
       updateCache([term, collection, page], res.data);
       return [res.data, null];
-    } catch (e) {
-      if (e.response)
-        return [null, `${e.response.status} ${e.response.data.errors[0]}`];
+    } catch (error) {
+      if (error.response)
+        return [
+          null,
+          `${error.response.status} ${error.response.data.errors[0]}`
+        ];
     }
   }
   return [null, "Something went wrong"];
