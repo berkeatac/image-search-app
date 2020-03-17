@@ -76,9 +76,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="navbar">
-        <Header state={state} dispatch={dispatch} />
-      </div>
+      {/* <div className="navbar"> */}
+      <Header state={state} dispatch={dispatch} />
+      {/* </div> */}
       <div className="content">
         {loading ? (
           <div className="loader-container">

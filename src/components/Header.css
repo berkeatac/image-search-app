@@ -3,6 +3,9 @@
   width: 100vw;
   background-color: #050417;
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .logo-container {
