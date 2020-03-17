@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Masonry from "react-masonry-component";
 
 import "./ImageList.css";
@@ -26,6 +27,10 @@ const ImageList = ({ images }) => {
   });
 
   return <Masonry options={masonryOptions}>{images ? items : ""}</Masonry>;
+};
+
+ImageList.propTypes = {
+  images: PropTypes.array
 };
 
 export default ImageList;

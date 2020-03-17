@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import PropTypes from "prop-types";
 import Select from "react-select";
 import { customStyles, options, DropdownIndicator } from "./dropdownOptions";
 import logo from "../assets/logo.svg";
@@ -52,6 +53,11 @@ const Header = ({ state, dispatch }) => {
       </form>
     </div>
   );
+};
+
+Header.propTypes = {
+  state: PropTypes.object,
+  dispatch: PropTypes.func
 };
 
 export default Header;

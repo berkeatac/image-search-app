@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./PageButtons.css";
 
@@ -27,6 +28,11 @@ const PageButtons = ({ state, dispatch }) => {
       </button>
     </div>
   );
+};
+
+PageButtons.propTypes = {
+  state: PropTypes.object,
+  dispatch: PropTypes.func
 };
 
 export default PageButtons;
