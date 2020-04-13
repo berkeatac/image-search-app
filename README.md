@@ -2,6 +2,8 @@ A Netlify deploy of the app can be checked from [https://distracted-hopper-b99c4
 
 ## image-search-app
 
+![screenshot](https://nimbus-screenshots.s3.amazonaws.com/s/5d1252b1bc5dc86089bf54f257102942.png  "screenshot")
+
 Image search app written in React. <br>
 Uses Unsplash API to retrieve images with given parameters from user. Displays results in a masonry grid.
 
