@@ -6,14 +6,21 @@ import ImageList from "../ImageList";
 import PageButtons from "../PageButtons";
 import ErrorBox from "../ErrorBox";
 import imageGetter from "../../api/imageGetter";
-import "./App.css";
+import { AppContent, LoaderContainer } from "./style";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0px;
+  }
+`;
 
 const initialState = {
   images: [],
   term: "istanbul",
   collection: 0,
   page: 1,
-  total_pages: 1
+  total_pages: 1,
 };
 
 const reducer = (state, action) => {
@@ -23,18 +30,18 @@ const reducer = (state, action) => {
         ...state,
         term: action.payload.term,
         collection: action.payload.collection,
-        page: 1
+        page: 1,
       };
     case "SET_IMAGES":
       return {
         ...state,
         images: action.payload.images,
-        total_pages: action.payload.total_pages
+        total_pages: action.payload.total_pages,
       };
     case "SET_PAGE":
       return {
         ...state,
-        page: action.payload.page
+        page: action.payload.page,
       };
     default:
       return state;
@@ -62,7 +69,7 @@ const App = () => {
       const { results, total_pages } = data;
       dispatch({
         type: "SET_IMAGES",
-        payload: { images: results, total_pages }
+        payload: { images: results, total_pages },
       });
       if (!results.length) setError("No result has been found");
     }
@@ -75,13 +82,14 @@ const App = () => {
   }, [state.term, state.collection, state.page]);
 
   return (
-    <div className="App">
+    <div>
+      <GlobalStyle whiteColor />
       <Header state={state} dispatch={dispatch} />
-      <div className="content">
+      <AppContent>
         {loading && (
-          <div className="loader-container">
+          <LoaderContainer className="loader-container">
             <ClipLoader />
-          </div>
+          </LoaderContainer>
         )}
         {error !== "" && !loading && <ErrorBox errorMessage={error} />}
         {!loading && error === "" && (
@@ -90,7 +98,7 @@ const App = () => {
             <PageButtons state={state} dispatch={dispatch} />
           </>
         )}
-      </div>
+      </AppContent>
     </div>
   );
 };

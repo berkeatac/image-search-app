@@ -1,4 +1,7 @@
-.header {
+import styled from "styled-components";
+import Select from "react-select";
+
+export const HeaderContainer = styled.div`
   height: 120px;
   width: 100vw;
   background-color: #050417;
@@ -6,17 +9,16 @@
   position: sticky;
   top: 0;
   z-index: 20;
-}
+`;
 
-.logo-container {
-  /* float: left; */
+export const LogoContainer = styled.div`
   height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+`;
 
-.logo {
+export const LogoComponent = styled.div`
   width: 70px;
   height: 70px;
   background: linear-gradient(
@@ -30,24 +32,24 @@
   align-items: center;
   justify-content: center;
   margin: 25px 50px 25px 50px;
-}
+`;
 
-.logo img {
+export const LogoImage = styled.img`
   width: 41px;
   height: 35px;
   margin: 2px 1px;
-}
+`;
 
-.form-container {
+export const HeaderFormContainer = styled.form`
   display: flex;
   width: calc(100% - 170px);
   height: 120px;
   align-items: center;
   margin-right: 100px;
   justify-content: space-evenly;
-}
+`;
 
-.query-input {
+export const HeaderQueryInput = styled.input`
   width: 400px;
   height: 50px;
   border-radius: 4px;
@@ -55,9 +57,9 @@
   font-family: Open Sans;
   font-size: 14px;
   border: 1px solid #cccccc;
-}
+`;
 
-.dropdown {
+export const HeaderDropdown = styled(Select)`
   width: 400px;
   height: 50px;
   border-radius: 4px;
@@ -66,9 +68,19 @@
   font-weight: 800;
   font-size: 14px;
   margin-left: 30px;
-}
+`;
 
-.submit-button {
+export const HeaderSubmitText = styled.p`
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+`;
+
+export const HeaderSubmitButton = styled.button`
   width: 246px;
   height: 50px;
   background: #2a2b8d;
@@ -76,15 +88,4 @@
   border-radius: 25px;
   cursor: pointer;
   margin-left: 52px;
-}
-
-.submit-text {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 14px;
-  line-height: 19px;
-  letter-spacing: 0.1em;
-
-  color: #ffffff;
-}
+`;

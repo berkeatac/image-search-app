@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./ImageList.css";
+import { ListImage, ImageListContainer } from "./style";
 
 const ImageList = ({ images }) => {
-  const items = images.map(img => {
+  const items = images.map((img) => {
     const height = img.height * (300 / img.width);
     return (
       <div
@@ -12,21 +12,17 @@ const ImageList = ({ images }) => {
         key={img.id}
       >
         <a href={img.links.html} target="_blank" rel="noopener noreferrer">
-          <img
-            src={img.urls.small}
-            alt={img.alt_description}
-            className="list-image"
-          ></img>
+          <ListImage src={img.urls.small} alt={img.alt_description} />
         </a>
       </div>
     );
   });
 
-  return <div className="image-list">{images && items}</div>;
+  return <ImageListContainer>{images && items}</ImageListContainer>;
 };
 
 ImageList.propTypes = {
-  images: PropTypes.array
+  images: PropTypes.array,
 };
 
 export default ImageList;

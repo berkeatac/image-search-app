@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./ErrorBox.css";
+import { ErrorContainer, ErrorText } from "./style";
 
 const ErrorBox = ({ errorMessage }) => {
   return (
-    <div className="error-box">
-      <p className="error-text">{errorMessage}</p>
-    </div>
+    <ErrorContainer>
+      <ErrorText className="error-text">{errorMessage}</ErrorText>
+    </ErrorContainer>
   );
 };
 
 ErrorBox.propTypes = {
-  errorMessage: PropTypes.string
+  errorMessage: PropTypes.string,
 };
 
 export default ErrorBox;
