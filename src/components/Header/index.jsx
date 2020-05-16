@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Select from "react-select";
 import { customStyles, options, DropdownIndicator } from "./dropdownOptions";
-import logo from "../assets/logo.svg";
+import logo from "../../assets/logo.svg";
 
 import "./Header.css";
 

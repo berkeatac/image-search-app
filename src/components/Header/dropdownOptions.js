@@ -1,7 +1,7 @@
 import React from "react";
 import { components } from "react-select";
-import { DD_TARGET_HEIGHT } from "../constants";
-import dd_indic from "../assets/dropdown_indicator.svg";
+import { DD_TARGET_HEIGHT } from "../../constants";
+import dd_indic from "../../assets/dropdown_indicator.svg";
 
 export const customStyles = {
   indicatorSeparator: () => {},
