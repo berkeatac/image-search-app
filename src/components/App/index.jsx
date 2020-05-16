@@ -64,7 +64,7 @@ const App = () => {
         type: "SET_IMAGES",
         payload: { images: results, total_pages }
       });
-      if (results.length === 0) setError("No result has been found");
+      if (!results.length) setError("No result has been found");
     }
 
     setLoading(false);
