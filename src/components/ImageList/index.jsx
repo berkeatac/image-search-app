@@ -22,7 +22,7 @@ const ImageList = ({ images }) => {
     );
   });
 
-  return <div className="image-list">{images ? items : ""}</div>;
+  return <div className="image-list">{images && items}</div>;
 };
 
 ImageList.propTypes = {

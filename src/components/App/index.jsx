@@ -76,22 +76,20 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <div className="navbar"> */}
       <Header state={state} dispatch={dispatch} />
-      {/* </div> */}
       <div className="content">
-        {loading ? (
+        {loading && (
           <div className="loader-container">
             <ClipLoader />
           </div>
-        ) : null}
-        {error !== "" && !loading ? <ErrorBox errorMessage={error} /> : null}
-        {!loading && error === "" ? (
+        )}
+        {error !== "" && !loading && <ErrorBox errorMessage={error} />}
+        {!loading && error === "" && (
           <>
             <ImageList images={state.images} />
             <PageButtons state={state} dispatch={dispatch} />
           </>
-        ) : null}
+        )}
       </div>
     </div>
   );

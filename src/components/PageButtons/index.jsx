@@ -13,7 +13,7 @@ const PageButtons = ({ state, dispatch }) => {
       <button
         onClick={() => changePage(-1)}
         disabled={state.page === 1 ? true : false}
-        className={`button ${state.page === 1 ? "disabled" : ""}`}
+        className={`button ${state.page === 1 && "disabled"}`}
       >
         <p className="button-text">Previous</p>
       </button>
@@ -21,7 +21,7 @@ const PageButtons = ({ state, dispatch }) => {
         onClick={() => changePage(1)}
         disabled={state.page === state.total_pages ? true : false}
         className={`button ${
-          state.page === state.total_pages ? "disabled" : ""
+          state.page === state.total_pages && "disabled"
         }`}
       >
         <p className="button-text">Next</p>
