@@ -14,11 +14,10 @@ Used function components & Hooks to manage component level states and events.<br
 Implemented caching with local storage to reduce API calls. imageGetter module decides on local/remote data retrieval.<br>
 
 ### Packages Used
-
+Husky<br>
+Cypress<br>
+Enzyme<br>
+Jest<br>
 axios<br>
 react-spinners<br>
 react-select<br>
-
-### Future Improvements
-
-Header sub-components may be further improved for a mobile friendly layout
