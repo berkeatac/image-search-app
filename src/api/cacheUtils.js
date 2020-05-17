@@ -1,8 +1,12 @@
 export const updateCache = (key, data) => {
-  localStorage.setItem(JSON.stringify(key), JSON.stringify(data));
+  try {
+    localStorage.setItem(JSON.stringify(key), JSON.stringify(data));
+  } catch (e) {
+    console.log(e);
+  }
 };
 
-export const getFromCache = key => {
+export const getFromCache = (key) => {
   const cached = localStorage.getItem(JSON.stringify(key));
   if (cached) {
     return JSON.parse(cached);
