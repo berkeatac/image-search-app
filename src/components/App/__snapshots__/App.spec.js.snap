@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot renders 1`] = `
+<div>
+  <div
+    className="sc-AxjAm ddUaJj"
+  >
+    <div
+      className="sc-AxirZ fxSvMx"
+    >
+      <div
+        className="sc-AxiKw gjZAwv"
+      >
+        <img
+          alt="logo"
+          className="sc-AxhCb efvFGU"
+          src="logo.svg"
+        />
+      </div>
+    </div>
+    <form
+      className="sc-AxhUy knSQqY"
+      onSubmit={[Function]}
+    >
+      <input
+        className="sc-AxgMl cJivbW"
+        placeholder="Query"
+        type="text"
+      />
+      <div
+        className="sc-AxheI cNckAa css-2b097c-container"
+        onKeyDown={[Function]}
+      >
+        <div
+          className=" css-a97y1b-control"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className=" css-1uiylfs-ValueContainer"
+          >
+            <div
+              className=" css-1uccc91-singleValue"
+            >
+              Default
+            </div>
+            <div
+              className="css-b8ldur-Input"
+            >
+              <div
+                className=""
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }
+              >
+                <input
+                  aria-autocomplete="list"
+                  autoCapitalize="none"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  disabled={false}
+                  id="react-select-2-input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  spellCheck="false"
+                  style={
+                    Object {
+                      "background": 0,
+                      "border": 0,
+                      "boxSizing": "content-box",
+                      "color": "inherit",
+                      "fontSize": "inherit",
+                      "label": "input",
+                      "opacity": 1,
+                      "outline": 0,
+                      "padding": 0,
+                      "width": "1px",
+                    }
+                  }
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "top": 0,
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              className=" css-62wm9a-IndicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+              className=" css-pgs6m7-indicatorContainer"
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+            >
+              <img
+                alt="dropdown arrow"
+                src="dropdown_indicator.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        className="sc-AxmLO gdRRGW"
+        type="submit"
+      >
+        <p
+          className="sc-Axmtr gBPFzr submit-text"
+        >
+          SEARCH
+        </p>
+      </button>
+    </form>
+  </div>
+  <div
+    className="sc-fzokOt ka-dUud"
+  >
+    <div
+      className="sc-fzozJi gNforj"
+    />
+    <div
+      className="sc-fzpans hqXyBQ"
+    >
+      <button
+        className="sc-fznyAO kjDhaP"
+        disabled={true}
+        onClick={[Function]}
+      >
+        <p
+          className="sc-fzplWN iZNOQC"
+        >
+          Previous
+        </p>
+      </button>
+      <button
+        className="sc-fznyAO kjDhaP"
+        disabled={true}
+        onClick={[Function]}
+      >
+        <p
+          className="sc-fzplWN iZNOQC"
+        >
+          Next
+        </p>
+      </button>
+    </div>
+  </div>
+</div>
+`;
