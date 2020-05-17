@@ -1,4 +1,12 @@
-const appReducer = (state, action) => {
+export const initialState = {
+  images: [],
+  term: "istanbul",
+  collection: 0,
+  page: 1,
+  total_pages: 1,
+};
+
+export const appReducer = (state, action) => {
   switch (action.type) {
     case "SET_PARAMS":
       return {
@@ -22,5 +30,3 @@ const appReducer = (state, action) => {
       return state;
   }
 };
-
-export default appReducer;

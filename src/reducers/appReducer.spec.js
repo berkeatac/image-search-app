@@ -1,4 +1,4 @@
-import appReducer from "./appReducer";
+import { appReducer } from "./appReducer";
 
 describe("Reducer", () => {
   it("should set page with reducer", () => {

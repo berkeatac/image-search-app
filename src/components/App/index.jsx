@@ -7,7 +7,7 @@ import ImageList from "../ImageList";
 import PageButtons from "../PageButtons";
 import ErrorBox from "../ErrorBox";
 import imageGetter from "../../api/imageGetter";
-// import appReducer from "../../reducers/ap"
+import { appReducer, initialState } from "../../reducers/appReducer";
 
 import { AppContent, LoaderContainer } from "./style";
 
@@ -17,41 +17,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const initialState = {
-  images: [],
-  term: "istanbul",
-  collection: 0,
-  page: 1,
-  total_pages: 1,
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "SET_PARAMS":
-      return {
-        ...state,
-        term: action.payload.term,
-        collection: action.payload.collection,
-        page: 1,
-      };
-    case "SET_IMAGES":
-      return {
-        ...state,
-        images: action.payload.images,
-        total_pages: action.payload.total_pages,
-      };
-    case "SET_PAGE":
-      return {
-        ...state,
-        page: action.payload.page,
-      };
-    default:
-      return state;
-  }
-};
-
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(appReducer, initialState);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -85,7 +52,7 @@ const App = () => {
 
   return (
     <div>
-      <GlobalStyle whiteColor />
+      <GlobalStyle />
       <Header state={state} dispatch={dispatch} />
       <AppContent>
         {loading && (
