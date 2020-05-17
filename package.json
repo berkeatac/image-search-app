@@ -17,13 +17,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-nobrowser": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-nowatch": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "cy:run": "cypress run",
-    "test-all": "npm run test-nowatch && start-server-and-test start http://localhost:3000 cy:run"
+    "test-all": "npm run test-nowatch && start-server-and-test start-nobrowser http://localhost:3000 cy:run"
   },
   "husky": {
     "hooks": {
