@@ -23,7 +23,9 @@ react-spinners<br>
 react-select<br>
 
 ### TO DO
-Fix local storage quota exceeded issue
-Mobile responsiveness of header and list / Add @media queries
-Add custom dropdown instead of the package
-Add custom spinner instead of the package
+Fix local storage quota exceeded issue<br>
+Mobile responsiveness of header and list / Add @media queries<br>
+Add custom dropdown instead of the package<br>
+Add custom spinner instead of the package<br>
+Add footer and about pages<br>
+Add routing and url parameters for queries<br>
