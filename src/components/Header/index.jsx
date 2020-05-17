@@ -46,7 +46,12 @@ const Header = ({ dispatch }) => {
         </LogoComponent>
       </LogoContainer>
       <HeaderFormContainer onSubmit={(e) => getImages(e)}>
-        <HeaderQueryInput type="text" placeholder="Query" ref={inputEl} />
+        <HeaderQueryInput
+          type="text"
+          placeholder="Query"
+          ref={inputEl}
+          data-cy="query-text"
+        />
         <HeaderDropdown
           ref={dropEl}
           options={options}
@@ -54,9 +59,10 @@ const Header = ({ dispatch }) => {
           defaultValue={{ label: "Default", value: 0 }}
           styles={customStyles}
           components={{ DropdownIndicator }}
+          data-cy="query-dropdown"
         />
-        <HeaderSubmitButton type="submit">
-          <HeaderSubmitText className="submit-text">SEARCH</HeaderSubmitText>
+        <HeaderSubmitButton type="submit" data-cy="query-button">
+          <HeaderSubmitText>SEARCH</HeaderSubmitText>
         </HeaderSubmitButton>
       </HeaderFormContainer>
     </HeaderContainer>

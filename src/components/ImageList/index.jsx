@@ -12,13 +12,21 @@ const ImageList = ({ images }) => {
         key={img.id}
       >
         <a href={img.links.html} target="_blank" rel="noopener noreferrer">
-          <ListImage src={img.urls.small} alt={img.alt_description} />
+          <ListImage
+            src={img.urls.small}
+            alt={img.alt_description}
+            data-cy="image-item"
+          />
         </a>
       </div>
     );
   });
 
-  return <ImageListContainer>{images && items}</ImageListContainer>;
+  return (
+    <ImageListContainer data-cy="image-list">
+      {images && items}
+    </ImageListContainer>
+  );
 };
 
 ImageList.propTypes = {

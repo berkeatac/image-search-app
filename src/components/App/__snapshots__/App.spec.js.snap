@@ -24,6 +24,7 @@ exports[`App snapshot renders 1`] = `
     >
       <input
         className="sc-AxgMl cJivbW"
+        data-cy="query-text"
         placeholder="Query"
         type="text"
       />
@@ -124,10 +125,11 @@ exports[`App snapshot renders 1`] = `
       </div>
       <button
         className="sc-AxmLO gdRRGW"
+        data-cy="query-button"
         type="submit"
       >
         <p
-          className="sc-Axmtr gBPFzr submit-text"
+          className="sc-Axmtr gBPFzr"
         >
           SEARCH
         </p>
@@ -139,12 +141,14 @@ exports[`App snapshot renders 1`] = `
   >
     <div
       className="sc-fzozJi gNforj"
+      data-cy="image-list"
     />
     <div
       className="sc-fzpans hqXyBQ"
     >
       <button
         className="sc-fznyAO kjDhaP"
+        data-cy="prev-page"
         disabled={true}
         onClick={[Function]}
       >
@@ -156,6 +160,7 @@ exports[`App snapshot renders 1`] = `
       </button>
       <button
         className="sc-fznyAO kjDhaP"
+        data-cy="next-page"
         disabled={true}
         onClick={[Function]}
       >

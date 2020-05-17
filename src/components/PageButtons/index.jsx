@@ -13,12 +13,14 @@ const PageButtons = ({ state, dispatch }) => {
       <PageButton
         onClick={() => changePage(-1)}
         disabled={state.page === 1 ? true : false}
+        data-cy="prev-page"
       >
         <ButtonText>Previous</ButtonText>
       </PageButton>
       <PageButton
         onClick={() => changePage(1)}
         disabled={state.page === state.total_pages ? true : false}
+        data-cy="next-page"
       >
         <ButtonText>Next</ButtonText>
       </PageButton>
