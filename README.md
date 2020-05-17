@@ -21,3 +21,9 @@ Jest<br>
 axios<br>
 react-spinners<br>
 react-select<br>
+
+### TO DO
+Fix local storage quota exceeded issue
+Mobile responsiveness of header and list / Add @media queries
+Add custom dropdown instead of the package
+Add custom spinner instead of the package
