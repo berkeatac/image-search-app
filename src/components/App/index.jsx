@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useReducer } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
+import { createGlobalStyle } from "styled-components";
 
 import Header from "../Header";
 import ImageList from "../ImageList";
 import PageButtons from "../PageButtons";
 import ErrorBox from "../ErrorBox";
 import imageGetter from "../../api/imageGetter";
+// import appReducer from "../../reducers/ap"
+
 import { AppContent, LoaderContainer } from "./style";
-import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
