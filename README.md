@@ -29,3 +29,4 @@ Add custom dropdown instead of the package<br>
 Add custom spinner instead of the package<br>
 Add footer and about pages<br>
 Add routing and url parameters for queries<br>
+Add form validation for empty query with validation rules and exported validator function <br>
