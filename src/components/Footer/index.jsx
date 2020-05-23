@@ -1,11 +1,13 @@
 import React from "react";
 
-import { FooterContainer, FooterText } from "./style";
+import { FooterContainer, FooterText, StyledLink } from "./style";
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterText>About</FooterText>
+      <StyledLink to="/about">
+        <FooterText>About</FooterText>
+      </StyledLink>
     </FooterContainer>
   );
 };

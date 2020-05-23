@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useReducer } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import { createGlobalStyle } from "styled-components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "../Header";
 import ImageList from "../ImageList";
@@ -52,25 +53,36 @@ const App = () => {
   }, [state.term, state.collection, state.page]);
 
   return (
-    <div>
-      <GlobalStyle />
-      <Header state={state} dispatch={dispatch} />
-      <AppContent>
-        {loading && (
-          <LoaderContainer className="loader-container">
-            <ClipLoader />
-          </LoaderContainer>
-        )}
-        {error !== "" && !loading && <ErrorBox errorMessage={error} />}
-        {!loading && error === "" && (
-          <>
-            <ImageList images={state.images} />
-            <PageButtons state={state} dispatch={dispatch} />
-          </>
-        )}
-      </AppContent>
-      <Footer />
-    </div>
+    <Router>
+      <Switch>
+        <Route
+          path="/"
+          exact
+          render={() => (
+            <div>
+              <GlobalStyle />
+              <Header state={state} dispatch={dispatch} />
+              <AppContent>
+                {loading && (
+                  <LoaderContainer className="loader-container">
+                    <ClipLoader />
+                  </LoaderContainer>
+                )}
+                {error !== "" && !loading && <ErrorBox errorMessage={error} />}
+                {!loading && error === "" && (
+                  <>
+                    <ImageList images={state.images} />
+                    <PageButtons state={state} dispatch={dispatch} />
+                  </>
+                )}
+              </AppContent>
+              <Footer />
+            </div>
+          )}
+        />
+        <Route path="/about" render={() => <p>About</p>}></Route>
+      </Switch>
+    </Router>
   );
 };
 

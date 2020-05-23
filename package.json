@@ -10,6 +10,7 @@
     "cypress": "^4.5.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
     "react-select": "^3.0.8",
     "react-spinners": "^0.8.1",
