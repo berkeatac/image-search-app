@@ -1,5 +1,13 @@
 import React from "react";
 
-const Footer = () => {};
+import { FooterContainer, FooterText } from "./style";
+
+const Footer = () => {
+  return (
+    <FooterContainer>
+      <FooterText>About</FooterText>
+    </FooterContainer>
+  );
+};
 
 export default Footer;

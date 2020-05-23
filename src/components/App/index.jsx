@@ -6,6 +6,7 @@ import Header from "../Header";
 import ImageList from "../ImageList";
 import PageButtons from "../PageButtons";
 import ErrorBox from "../ErrorBox";
+import Footer from "../Footer";
 import imageGetter from "../../api/imageGetter";
 import { appReducer, initialState } from "../../reducers/appReducer";
 
@@ -68,6 +69,7 @@ const App = () => {
           </>
         )}
       </AppContent>
+      <Footer />
     </div>
   );
 };
